@@ -27,6 +27,5 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --clean
-          workdir: crawlhash/
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
