@@ -59,3 +59,33 @@ run from. This file contains the output from crawlhash.
 ```bash
 crawlhash ~/path/to/dir
 ```
+
+
+### About
+
+crawlhash is a port of a previous tool that I wroke that did the exact same thing.
+That tool, found [here](https://github.com/DavidHoenisch/evisure) was tooled in 
+python and was is significantly slower. 
+
+As an example, I hashed my `~/Documents` folder which has about 13k files in it.
+
+Here are screenshots from my testing:
+
+![python implementation](./assets/crawl_hash_python_version.png)
+
+
+![golang implementation](./assets/crawlhash_golang_version.png)
+
+Quite the signifcant speed improvement. This is not, however, a 1-to-1 comparison.
+Both iterations of the tool writ the results to a file, but the golang implementation
+records results to json. Writing results to json requires marginally more work. The golang
+version is not only faster, it is faster while doing more.
+
+
+### Improvements
+
+I have a few items on the roadmap for improvement.
+
+- [ ] Threading -> My thought is that each directory could be handed off to a seperate thread for hashing
+- [ ] More command line options for flexibility implemented through use of the cobra library
+
