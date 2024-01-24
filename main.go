@@ -26,13 +26,13 @@ func getDatetime() string {
 
 }
 
-func jsonWriter() {
+func jsonWriter(name string) {
 	jsonData, err := json.MarshalIndent(entries, "", " ")
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	err = os.WriteFile("log.json", jsonData, 0644)
+	err = os.WriteFile(name, jsonData, 0644)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -91,8 +91,9 @@ func handler() filepath.WalkFunc {
 
 func main() {
 
-	if len(os.Args) > 2 {
-		fmt.Println("Missing path to scan")
+if len(os.Args) < 3 {
+		fmt.Println("\nMissing path to scan or output file\n")
+		fmt.Println("\nExample: crawlhash ~/Documents name_of_output.json \n")
 		os.Exit(1)
 	}
 
@@ -102,5 +103,5 @@ func main() {
 	if err != nil {
 		fmt.Printf("the follow error occure %s ", err)
 	}
-	jsonWriter()
+	jsonWriter(os.Args[2])
 }
