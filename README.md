@@ -1,5 +1,7 @@
 # Evidence Tool
 
+![logo](assets/logo.png)
+
 
 ## Crawlhash
 This tool crawls a directory tree and outputs hashes to a json log file. The hash,
@@ -8,7 +10,14 @@ absolute file path, and datetime of the recording are save as a list of json obj
 ### Instalation
 
 
-Opt 1. **Pre-built bianaries**
+Opt 1. **Go Install** _recommended method_
+
+```bash
+go install github.com/DavidHoenisch/crawlhash@latest
+```
+
+
+Opt 2. **Pre-built bianaries**
 
 
 Prebuilt bianaries are provided for easier set up. You can also build from source
