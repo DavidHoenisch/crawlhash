@@ -1,5 +1,3 @@
-# Evidence Tool
-
 ![logo](assets/logo.png)
 
 
